@@ -5,13 +5,11 @@ import { Menu, X, Sparkles, ArrowUpRight } from 'lucide-react';
 interface NavbarProps {
   onOpenPromo: () => void;
   onBookClick: () => void;
-  onLoginClick: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   onOpenPromo,
   onBookClick,
-  onLoginClick,
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -78,13 +76,11 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span>Promo Codes Active</span>
             </button>
 
-            {/* Login Link with exact href="/login-portal" */}
+            {/* Login Link */}
             <a
-              href="/login-portal"
-              onClick={(e) => {
-                e.preventDefault();
-                onLoginClick();
-              }}
+              href="https://momence.com/sign-in?hostId=47062"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-xs uppercase tracking-[0.16em] font-light text-[#BDB0A8] hover:text-[#F4EBE2] px-3 py-2 transition-colors duration-200"
             >
               Log In
@@ -161,12 +157,9 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <div className="space-y-3 pt-6 border-t border-white/[0.08]">
               <a
-                href="/login-portal"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setMobileMenuOpen(false);
-                  onLoginClick();
-                }}
+                href="https://momence.com/sign-in?hostId=47062"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block text-center py-3 rounded-xl border border-white/15 text-xs font-light tracking-wider uppercase text-[#F4EBE2]"
               >
                 Log In

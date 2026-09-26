@@ -12,7 +12,6 @@ import { StudioSanctuary } from './components/StudioSanctuary';
 import { InstructorsEditorial } from './components/InstructorsEditorial';
 import { FirstTimersFAQ } from './components/FirstTimersFAQ';
 import { BookingModal } from './components/BookingModal';
-import { LoginPortalModal } from './components/LoginPortalModal';
 import { Footer } from './components/Footer';
 import { ClassItem, PricingPackage } from './types';
 
@@ -24,7 +23,6 @@ export function App() {
   const [selectedClass, setSelectedClass] = useState<ClassItem | null>(null);
   const [selectedDayName, setSelectedDayName] = useState<string>('Monday');
   const [selectedPackage, setSelectedPackage] = useState<PricingPackage | null>(null);
-  const [loginModalOpen, setLoginModalOpen] = useState(false);
 
   // Welcome modal trigger after 3 seconds
   useEffect(() => {
@@ -95,13 +93,7 @@ export function App() {
         onExplorePackages={handleExplorePackages}
       />
 
-      {/* 3. Member Login Portal Modal */}
-      <LoginPortalModal
-        isOpen={loginModalOpen}
-        onClose={() => setLoginModalOpen(false)}
-      />
-
-      {/* 4. Booking & Reservation Modal */}
+      {/* 3. Booking & Reservation Modal */}
       <BookingModal
         isOpen={bookingModalOpen}
         onClose={() => setBookingModalOpen(false)}
@@ -114,7 +106,6 @@ export function App() {
       <Navbar
         onOpenPromo={handleOpenPromoModal}
         onBookClick={handleBookFromHero}
-        onLoginClick={() => setLoginModalOpen(true)}
       />
 
       {/* Main Editorial Content Flow with Apple-Like Viewport Animations */}
